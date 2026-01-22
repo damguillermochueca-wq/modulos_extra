@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "FPINFORAMATICA",
+    'name': "fpinformatica",
     'summary': "Gestión de prácticas FCT (Alumnos y Empresas)",
     'description': "Módulo para gestionar la asignación de alumnos de FP a empresas.",
     'author': "Grupo DAM2",
@@ -13,12 +13,12 @@
 
     # Lista de archivos a cargar (EL ORDEN IMPORTA)
     'data': [
-        'security/security.xml',          # 1. Primero los grupos
-        'security/ir.model.access.csv',   # 2. Luego los permisos
-        'views/menus.xml',                # 3. Definición de acciones y menús
-        'views/empresa_views.xml',        # 4. Vistas de empresa
-        'views/alumno_views.xml',         # 5. Vistas de alumno
-        'reports/report_fct.xml',         # 6. Informes
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/alumno_views.xml',   # <--- 1º Define las vistas de Alumnos (y su search view)
+        'views/empresa_views.xml',  # <--- 2º Define las vistas de Empresa
+        'views/menus.xml',          # <--- 3º AHORA sí puedes cargar los menús y acciones que usan lo anterior
+        'reports/report_fct.xml',
     ],
     
     'application': True,
